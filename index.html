@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link rel="icon" type="./assets/images/logo.png" href="./assets/images/logo.png">
-    
-    </head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-sclae=1.0">
     <title>Ademilda Variedades - Perfumes & Kits</title>
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
     <style>
         /* Paleta de Cores */
         :root {
@@ -40,16 +33,17 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: center; /* Garante alinhamento vertical central */
             padding: 1rem 2rem;
             background-color: var(--branco);
             box-shadow: 0 2px 5px var(--sombra);
-            position: fixed;
+            position: fixed; /* Torna a barra de navegação estática */
             width: 100%;
             top: 0;
+            left: 0; /* Garante que ela ocupe toda a largura */
             z-index: 1000;
         }
-
+        
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
@@ -60,6 +54,7 @@
         .nav-links {
             list-style: none;
             display: flex;
+            align-items: center; /* Alinha os links verticalmente dentro da lista */
         }
 
         .nav-links li {
@@ -205,27 +200,29 @@
             padding: 4rem 2rem;
             text-align: center;
         }
-
-        .contact-section form {
+        
+        .contact-info {
             max-width: 600px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
         }
 
-        .contact-section input, .contact-section textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            color: var(--cinza-escuro);
+        .highlight {
+            font-weight: bold;
         }
 
-        .contact-section textarea {
-            min-height: 150px;
-            resize: vertical;
+        .whatsapp-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
+
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.2); /* Efeito de escala ao passar o mouse */
         }
 
         /* Rodapé */
@@ -235,47 +232,13 @@
             background-color: var(--cinza-escuro);
             color: var(--branco);
         }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-bottom: 1rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                margin-top: 1rem;
-            }
-/* Estilo para o ícone do WhatsApp */
-.whatsapp-link {
-    display: inline-block;
-    margin-top: 1.5rem;
-}
-
-.whatsapp-icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.whatsapp-icon:hover {
-    transform: scale(1.2); /* Efeito de escala ao passar o mouse */
-}
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <nav class="navbar">
-            <div class="logo">Ademilda Variedades
+            <div class="logo">Ademilda Variedades</div>
             <ul class="nav-links">
                 <li><a href="#perfumes">Perfumes</a></li>
                 <li><a href="#kits">Kits Personalizados</a></li>
@@ -297,21 +260,21 @@
             <h2>Nossos Perfumes</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="./assets/images/perfume1.jpg" alt="Perfume 1">
+                    <img src="./assets/images/perfume1.jpg" alt="Perfume Aquavibes">
                     <h3>Aquavibes</h3>
-                    <p>fragrâncias delicadas e doces.</p>
+                    <p>Fragrâncias delicadas e doces.</p>
                     <span class="price">R$ 25,00</span>
                     <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="product-card">
-                    <img src="./assets/images/perfume2.jpg" alt="Perfume 2">
+                    <img src="./assets/images/perfume2.jpg" alt="Óleo Nativa Spa">
                     <h3>Óleo Nativa Spa</h3>
                     <p>Sofisticação e mistério em cada gota.</p>
                     <span class="price">R$ 80,00</span>
                     <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="product-card">
-                    <img src="./assets/images/perfume3.jpg" alt="Perfume 3">
+                    <img src="./assets/images/perfume3.jpg" alt="Body Splash">
                     <h3>Body Splash</h3>
                     <p>Energia e alegria para o seu dia a dia.</p>
                     <span class="price">R$ 80,00</span>
@@ -339,21 +302,22 @@
                 </div>
             </div>
         </section>
-<section id="contato" class="contact-section">
-    <h2>Entre em Contato</h2>
-    <p>
-        Estamos prontos para te acolher. Para agilizar o atendimento.
-    </p>
-        <span class="highlight">Telefone:</span> (81) 98606-3711<br>
-        <span class="highlight">Endereço:</span> Rua Sâo Sebastiâo, 1049 - Centro, Recife/PE
-    </p>
-    
-    <a href="https://wa.me/5581986063711" class="whatsapp-link" target="_blank" title="Fale conosco pelo WhatsApp">
-        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Ícone do WhatsApp" class="whatsapp-icon">
-    </a>
-</section>
-       
 
+        <section id="contato" class="contact-section">
+            <h2>Entre em Contato</h2>
+            <p>
+                Estamos prontos para te acolher. Para agilizar o atendimento.
+            </p>
+            <div class="contact-info">
+                <p>
+                    <span class="highlight">Telefone:</span> (81) 98606-3711<br>
+                    <span class="highlight">Endereço:</span> Rua Sâo Sebastiâo, 1049 - Centro, Recife/PE
+                </p>
+                <a href="https://wa.me/5581986063711" class="whatsapp-link" target="_blank" title="Fale conosco pelo WhatsApp">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Ícone do WhatsApp" class="whatsapp-icon">
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -361,9 +325,4 @@
     </footer>
 
 </body>
-
 </html>
-
-
-
-
