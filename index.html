@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-sclae=1.0">
-    <title>Sua Marca - Perfumes & Kits</title>
+    <title>Ademilda Variedades - Perfumes & Kits</title>
     <style>
         /* Paleta de Cores */
         :root {
@@ -242,7 +242,21 @@
                 text-align: center;
                 margin-top: 1rem;
             }
+/* Estilo para o ícone do WhatsApp */
+.whatsapp-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
 
+.whatsapp-icon {
+    width: 48px;
+    height: 48px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+}
             .nav-links li {
                 margin: 0.5rem 0;
             }
@@ -276,24 +290,24 @@
             <div class="product-grid">
                 <div class="product-card">
                     <img src="./assets/images/perfume1.jpg" alt="Perfume 1">
-                    <h3>Essência Floral</h3>
-                    <p>Uma fragrância delicada e fresca.</p>
-                    <span class="price">R$ 150,00</span>
-                    <a href="#" class="btn-card">Comprar</a>
+                    <h3>Aquavibes</h3>
+                    <p>fragrâncias delicadas e doces.</p>
+                    <span class="price">R$ 25,00</span>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="product-card">
                     <img src="./assets/images/perfume2.jpg" alt="Perfume 2">
-                    <h3>Caminho Amadeirado</h3>
+                    <h3>Óleo Nativa Spa</h3>
                     <p>Sofisticação e mistério em cada gota.</p>
-                    <span class="price">R$ 175,00</span>
-                    <a href="#" class="btn-card">Comprar</a>
+                    <span class="price">R$ 80,00</span>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="product-card">
                     <img src="./assets/images/perfume3.jpg" alt="Perfume 3">
-                    <h3>Doce Cítrico</h3>
+                    <h3>Body Splash</h3>
                     <p>Energia e alegria para o seu dia a dia.</p>
-                    <span class="price">R$ 160,00</span>
-                    <a href="#" class="btn-card">Comprar</a>
+                    <span class="price">R$ 80,00</span>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
             </div>
         </section>
@@ -306,33 +320,38 @@
                     <h3>Kit Romance</h3>
                     <p>Perfume e hidratante para momentos especiais.</p>
                     <span class="price">R$ 250,00</span>
-                    <a href="#" class="btn-card">Comprar</a>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="kit-card">
                     <img src="./assets/images/kit2.jpg" alt="Kit Presente">
                     <h3>Kit Presente</h3>
                     <p>A melhor opção para presentear quem você ama.</p>
                     <span class="price">R$ 280,00</span>
-                    <a href="#" class="btn-card">Comprar</a>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
             </div>
         </section>
-
-        <section id="contato" class="contact-section">
-            <h2>Entre em Contato</h2>
-            <form action="#">
-                <input type="text" placeholder="Seu Nome">
-                <input type="email" placeholder="Seu Email">
-                <textarea placeholder="Sua Mensagem"></textarea>
-                <button type="submit" class="btn">Enviar Mensagem</button>
-            </form>
-        </section>
+<section id="contato" class="contact-section">
+    <h2>Entre em Contato</h2>
+    <p>
+        Estamos prontos para te acolher. Para agilizar o atendimento, preencha o formulário abaixo.
+    </p>
+        <span class="highlight">Telefone:</span> (81) 98606-3711<br>
+        <span class="highlight">Endereço:</span> Rua Sâo Sebastiâo, 1049 - Centro, Recife/PE
+    </p>
+    
+    <a href="https://wa.me/5581986063711" class="whatsapp-link" target="_blank" title="Fale conosco pelo WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="Ícone do WhatsApp" class="whatsapp-icon">
+    </a>
+</section>
+       
 
     </main>
 
     <footer>
-        <p>&copy; 2025 Sua Marca. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Ademilda variedades. Todos os direitos reservados.</p>
     </footer>
 
 </body>
+
 </html>
