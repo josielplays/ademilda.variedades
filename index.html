@@ -1,7 +1,9 @@
-<html lang="pt-br"><head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ademilda Variedades - Perfumes &amp; Kits</title>
+    <title>Ademilda Variedades - Perfumes & Kits</title>
     <link rel="icon" type="image/png" href="./assets/images/logo.png">
     <style>
         /* Paleta de Cores */
@@ -31,14 +33,14 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Garante alinhamento vertical central */
+            align-items: center;
             padding: 1rem 2rem;
             background-color: var(--branco);
             box-shadow: 0 2px 5px var(--sombra);
-            position: fixed; /* Torna a barra de navegação estática */
+            position: fixed;
             width: 100%;
             top: 0;
-            left: 0; /* Garante que ela ocupe toda a largura */
+            left: 0;
             z-index: 1000;
         }
         
@@ -52,7 +54,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            align-items: center; /* Alinha os links verticalmente dentro da lista */
+            align-items: center;
         }
 
         .nav-links li {
@@ -72,7 +74,7 @@
 
         /* Seções */
         main {
-            padding-top: 60px; /* Para acomodar a navegação fixa */
+            padding-top: 60px;
         }
 
         .hero-section {
@@ -137,7 +139,9 @@
             transform: translateY(-10px);
         }
 
-        .product-card img, .kit-card img {
+        /* Estilo padrão para imagens que não são interativas */
+        .product-card img, 
+        .kit-card img:not(.imagem-inicial-promocao, .imagem-produto-revelado) {
             max-width: 100%;
             border-radius: 8px;
             margin-bottom: 1rem;
@@ -158,8 +162,38 @@
             font-weight: bold;
             color: var(--rosa-pastel);
             display: block;
+            margin-bottom: 0.5rem; 
+        }
+        
+        /* Estilo para o preço antigo/riscado */
+        .old-price {
+            font-size: 1rem;
+            color: var(--cinza-claro);
+            text-decoration: line-through;
+            margin-bottom: 0;
+            display: block;
+        }
+
+        /* Estilos GERAIS para a funcionalidade Clique para Revelar (usada nas promoções 1 e 2) */
+        .imagem-inicial-promocao {
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            max-width: 100%;
+            border-radius: 8px;
             margin-bottom: 1rem;
         }
+
+        .imagem-produto-revelado {
+            display: none; /* Esconde a segunda imagem por padrão */
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .imagem-inicial-promocao:hover {
+            opacity: 0.8;
+        }
+
 
         /* Botões */
         .btn {
@@ -220,7 +254,7 @@
         }
 
         .whatsapp-icon:hover {
-            transform: scale(1.2); /* Efeito de escala ao passar o mouse */
+            transform: scale(1.2);
         }
 
         /* Rodapé */
@@ -239,9 +273,10 @@
             <div class="logo">Ademilda Variedades</div>
             <ul class="nav-links">
                 <li><a href="#perfumes">Perfumes</a></li>
-                <li><a href="#Promoções">Promoções</a></li><li><a href="#kits">Kits Personalizados</a></li>
-                
-            <li><a href="#contato">Contato</a></li></ul>
+                <li><a href="#Promocoes">Promoções</a></li>
+                <li><a href="#kits">Kits Personalizados</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -300,25 +335,50 @@
                     <span class="price">R$ 135,00</span>
                     <a href="#contato" class="btn-card">Comprar</a>
                 </div>
-        </div></section>
+            </div>
+        </section>
 
-        <section id="Promoções" class="product-section">
+        <section id="Promocoes" class="product-section">
             <h2>Promoções</h2>
             <div class="kit-grid">
                 <div class="kit-card">
-                    <img src="./assets/images/promoção1.png" alt="Promoçao">
-                    <h3>Essencial tradicional</h3>
-                    <p></p>
-                    <span class="price">De R$ 278,00</span>
-                    <span class="price">R$ 180,00</span><a href="#contato" class="btn-card">Comprar</a>
+                    <img id="promocao1-inicial" 
+                         class="imagem-inicial-promocao" 
+                         src="./assets/images/promocao1-fechada.png" 
+                         alt="Clique para ver o produto dentro da promoção" 
+                         onclick="revelarProduto('promocao1')">
+
+                    <img id="promocao1-revelado" 
+                         class="imagem-produto-revelado" 
+                         src="./assets/images/promocao1-aberta.png" 
+                         alt="Essencial Tradicional">
+                         
+                    <h3 id="promocao1-titulo">(Revelável)</h3>
+                    <p id="promocao1-descricao">Clique na imagem para ver o perfume!</p>
+                    <span class="old-price">R$ 278,00</span>
+                    <span class="price">R$ 180,00</span>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
+                
                 <div class="kit-card">
-                    <img src="./assets/images/promoção2.png" alt="Promoção">
-                    <h3>Essencial Exclusivo</h3>
-                    <p></p>
-                    <span class="price">R$ 278,90</span>
-                    <span class="price">R$ 180,00</span><a href="#contato" class="btn-card">Comprar</a>
+                    <img id="promocao2-inicial" 
+                         class="imagem-inicial-promocao" 
+                         src="./assets/images/promocao2-fechada.png" 
+                         alt="Clique para ver o produto dentro da promoção" 
+                         onclick="revelarProduto('promocao2')">
+
+                    <img id="promocao2-revelado" 
+                         class="imagem-produto-revelado" 
+                         src="./assets/images/promocao2-aberta.png" 
+                         alt="Essencial Exclusivo">
+                         
+                    <h3 id="promocao2-titulo">(Revelável)</h3> 
+                    <p id="promocao2-descricao">Clique na imagem para ver o perfume!</p>
+                    <span class="old-price">R$ 278,90</span>
+                    <span class="price">R$ 180,00</span>
+                    <a href="#contato" class="btn-card">Comprar</a>
                 </div>
+                
             </div>
         </section>
 
@@ -328,19 +388,21 @@
                 <div class="kit-card">
                     <img src="./assets/images/kit1.png" alt="kit">
                     <h3>Kit Kaiak tradicional</h3>
-                    <p></p>
+                    <p>Um conjunto com a força da natureza e do mar.</p>
                     <span class="price">R$ 120,00</span>
                     <a href="#contato" class="btn-card">Comprar</a>
                 </div>
                 <div class="kit-card">
                     <img src="./assets/images/kit2.png" alt="Kit">
                     <h3>Kit Far Away</h3>
-                    <p></p>
+                    <p>Para viagens e momentos inesquecíveis.</p>
                     <span class="price">R$ 150,00</span>
                     <a href="#contato" class="btn-card">Comprar</a>
                 </div>
             </div>
-        </section><section id="contato" class="contact-section">
+        </section>
+        
+        <section id="contato" class="contact-section">
             <h2>Entre em Contato</h2>
             <p>
                 Estamos prontos para te acolher. Para agilizar o atendimento.
@@ -361,15 +423,46 @@
         <p>© 2025 Ademilda variedades. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        // Objeto para armazenar os textos a serem revelados
+        const textosRevelados = {
+            'promocao1': {
+                titulo: 'Essencial Tradicional',
+                descricao: ''
+            },
+            'promocao2': {
+                titulo: 'Essencial Exclusivo',
+                descricao: ''
+            }
+        };
 
+        function revelarProduto(itemId) {
+            // 1. Busca os elementos de Imagem
+            const imagemInicial = document.getElementById(itemId + '-inicial');
+            const imagemRevelada = document.getElementById(itemId + '-revelado');
+            
+            // 2. Realiza a troca da Imagem
+            if (imagemInicial && imagemRevelada) {
+                imagemInicial.style.display = 'none';
+                imagemRevelada.style.display = 'block';
+            }
 
+            // 3. Verifica se existem textos para atualizar
+            if (textosRevelados[itemId]) {
+                const titulo = document.getElementById(itemId + '-titulo');
+                const descricao = document.getElementById(itemId + '-descricao');
+                const novoTexto = textosRevelados[itemId];
+                
+                // 4. Realiza a troca do Texto
+                if (titulo) {
+                    titulo.textContent = novoTexto.titulo;
+                }
+                if (descricao) {
+                    descricao.textContent = novoTexto.descricao;
+                }
+            }
+        }
+    </script>
 
-
-
-
-
-
-
-
-</body></html>
-
+</body>
+</html>
